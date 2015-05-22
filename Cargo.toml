@@ -1,0 +1,8 @@
+[package]
+name = "tic_tac_toe"
+version = "0.0.1"
+authors = ["Dominik Picheta <dominikpicheta@googlemail.com>"]
+
+[dependencies]
+
+rand="0.3.0"
