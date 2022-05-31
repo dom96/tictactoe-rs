@@ -5,4 +5,4 @@ authors = ["Dominik Picheta <dominikpicheta@googlemail.com>"]
 
 [dependencies]
 
-rand="0.3.0"
+rand="0.8.5"

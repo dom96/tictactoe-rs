@@ -32,7 +32,7 @@ fn main() {
       // AI
       print!("AI is deliberating");
       io::stdout().flush().ok().expect("Failed to flush");
-      for i in 0 .. rand::thread_rng().gen_range(3, 5) {
+      for i in 0 .. rand::thread_rng().gen_range(3..5) {
         sleep_ms(1000);
         print!(".");
         io::stdout().flush().ok().expect("Failed to flush");

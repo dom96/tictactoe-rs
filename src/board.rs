@@ -175,7 +175,7 @@ impl Game {
 
   pub fn take_turn(&mut self) {
     loop {
-      let index = rand::thread_rng().gen_range(0, 8);
+      let index = rand::thread_rng().gen_range(0..8);
       if self.board[index] == BoardState::Empty {
         self.mark(index as i32, BoardState::O);
         break;
