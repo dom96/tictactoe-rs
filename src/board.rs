@@ -4,8 +4,7 @@ use self::rand::Rng;
 use std::fmt::*;
 use std::clone::*;
 
-#[derive(PartialEq)]
-#[derive(Clone)]
+#[derive(PartialEq, Clone, Copy)]
 pub enum BoardState {
   X, O, Empty
 }
@@ -13,9 +12,9 @@ pub enum BoardState {
 impl BoardState {
   fn to_string(&self) -> String {
     match *self {
-      BoardState::X => "X".to_string(),
-      BoardState::O => "O".to_string(),
-      BoardState::Empty => " ".to_string()
+      BoardState::X => String::from("X"),
+      BoardState::O => String::from("O"),
+      BoardState::Empty => String::from(" ")
     }
   }
 }
@@ -38,15 +37,13 @@ pub struct Game {
 
 impl Game {
   pub fn new() -> Game {
-    Game { board: [BoardState::Empty, BoardState::Empty, BoardState::Empty,
-                   BoardState::Empty, BoardState::Empty, BoardState::Empty,
-                   BoardState::Empty, BoardState::Empty, BoardState::Empty],
+    Game { board: [BoardState::Empty; 9],
            winner: GameResult::InProgress }
   }
 
   pub fn get_board(&self) -> String {
     // Intialise the top of our game board.
-    let mut result = "  A B C \n".to_string();
+    let mut result = String::from("  A B C \n");
     result.push_str(" ┌─┬─┬─┐\n");
 
     // Use while loop here as step_by is still experimental.
